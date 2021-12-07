@@ -1,9 +1,15 @@
 const path = require("path");
+const LodashModuleReplacementPlugin = require("lodash-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  entry: "./src/index.tsx",
+  devtool: "inline-source-map",
   output: {
-    path: path.join(__dirname, "/dist"),
+    path: path.resolve(__dirname, "dist"),
     filename: "index.bundle.js",
+    chunkFilename: "[id].js",
+    publicPath: "",
   },
   resolve: {
     extensions: [".js", ".jsx", ".tsx", ".ts"],
@@ -18,8 +24,9 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
+        loader: "babel-loader",
+        options: {
+          plugins: ["lodash"],
         },
       },
       {
@@ -29,4 +36,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: __dirname + "/src/index.html",
+      filename: "[file].map[query]",
+      inject: "body",
+    }),
+    new LodashModuleReplacementPlugin(),
+  ],
 };
