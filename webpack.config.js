@@ -5,6 +5,9 @@ module.exports = {
     path: path.join(__dirname, "/dist"),
     filename: "index.bundle.js",
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".tsx", ".ts"],
+  },
   devServer: {
     port: 3020,
     static: path.resolve(__dirname, "dist"),
@@ -18,6 +21,11 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
     ],
   },
