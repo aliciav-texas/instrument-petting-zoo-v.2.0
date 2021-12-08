@@ -5,7 +5,7 @@ import Header from "./components/Navigation/Header";
 import Homepage from "./components/Homepage";
 import InstrumentAssessmentMain from "./components/Assessor_Facing/InstrusmentAssessmentMain";
 import DirectorMain from "./components/Director_Facing/DirectorMain";
-import StudentMain from "./components/Student_Facing/StudentInterestForm";
+import StudentRegistration from "./components/Student_Facing/StudentRegistration";
 
 export function App(): JSX.Element {
   return (
@@ -13,7 +13,10 @@ export function App(): JSX.Element {
       <main>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/studentInterest" element={<StudentMain />} />
+          <Route
+            path="/studentRegistration"
+            element={<StudentRegistration />}
+          />
           <Route
             path="/instrumentAssessment"
             element={<InstrumentAssessmentMain />}
