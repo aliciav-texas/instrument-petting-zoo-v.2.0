@@ -19,7 +19,6 @@
     "url": "https://github.com/aliciav-texas/instrument-petting-zoo-v.2.0/issues"
   },
   "homepage": "https://github.com/aliciav-texas/instrument-petting-zoo-v.2.0#readme",
-  "lint": "eslint --ext .jsx,.js,.ts,.tsx src/ --fix",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
