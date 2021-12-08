@@ -18,7 +18,6 @@ export function App(): JSX.Element {
             path="/instrumentAssessment"
             element={<InstrumentAssessmentMain />}
           />
-
           <Route path="/director" element={<DirectorMain />} />
           {/* <Route path="/finalCheckout" element={FinalCheckout} /> */}
         </Routes>
