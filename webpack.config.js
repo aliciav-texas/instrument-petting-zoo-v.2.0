@@ -9,7 +9,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index.bundle.js",
     chunkFilename: "[id].js",
-    publicPath: "",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".js", ".jsx", ".tsx", ".ts"],
@@ -18,6 +18,7 @@ module.exports = {
     port: 3020,
     static: path.resolve(__dirname, "dist"),
     compress: true,
+    historyApiFallback: true,
   },
   module: {
     rules: [
