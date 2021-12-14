@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { auth } from "../../../config/firebase";
-// Materia-UI
+import ErrorText from "../ErrorText/index";
+// Material-UI
 import { makeStyles } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
@@ -71,6 +72,9 @@ export default function StudentInterestForm(): JSX.Element {
         type="email"
         required
         value={email}
+        onChange={(event) => {
+          setEmail(event.target.value);
+        }}
       />
       <TextField
         label="Password"
@@ -78,12 +82,37 @@ export default function StudentInterestForm(): JSX.Element {
         type="password"
         required
         value={password}
+        onChange={(event) => {
+          setPassword(event.target.value);
+        }}
+      />
+      <TextField
+        label="Confirm Password"
+        variant="filled"
+        type="password"
+        required
+        value={confirm}
+        onChange={(event) => {
+          setConfirm(event.target.value);
+        }}
       />
       <div>
         <Button variant="contained">Cancel</Button>
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          disabled={registering}
+          type="submit"
+          variant="contained"
+          color="primary"
+          onClick={() => signUpWithEmailAndPassword()}
+        >
           Signup
         </Button>
+        <small>
+          <p className="m-1 text-center">
+            Have you already registered? <Link to="/login">Login</Link>{" "}
+          </p>
+        </small>
+        <ErrorText error={error} />
       </div>
     </form>
   );
