@@ -8,9 +8,11 @@ export function App(): JSX.Element {
     <div>
       <main>
         <Routes>
-          {routes.map((route, index) => (
-            <Route key={index} path={route.path} />
-          ))}
+          {routes.map((route, index) => {
+            return (
+              <Route key={index} path={route.path} element={route.component} />
+            );
+          })}
         </Routes>
       </main>
       <Footer />
