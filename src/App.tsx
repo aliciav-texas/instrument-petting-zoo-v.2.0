@@ -7,6 +7,7 @@ import InstrumentAssessmentMain from "./components/Assessor_Facing/InstrusmentAs
 import DirectorMain from "./components/Director_Facing/DirectorMain";
 import StudentRegistration from "./components/Student_Facing/StudentRegistration";
 import DirectorLogIn from "./components/Director_Facing/DirectorLogIn";
+import StudentInterestForm from "./components/Student_Facing/StudentInterestForm";
 
 export function App(): JSX.Element {
   return (
@@ -25,6 +26,10 @@ export function App(): JSX.Element {
 
           <Route path="/directorMain" element={<DirectorMain />} />
           <Route path="/directorLogin" element={<DirectorLogIn />} />
+          <Route
+            path="/studentInterestForm"
+            element={<StudentInterestForm />}
+          />
           {/* <Route path="/finalCheckout" element={FinalCheckout} /> */}
         </Routes>
       </main>
