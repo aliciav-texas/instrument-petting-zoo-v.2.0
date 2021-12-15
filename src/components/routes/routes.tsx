@@ -2,8 +2,9 @@ import Homepage from "../Homepage";
 import StudentRegistration from "../Student_Facing/StudentRegistration";
 import InstrumentAssessment from "../Assessor_Facing/InstrusmentAssessmentMain";
 import DirectorMain from "../Director_Facing/DirectorMain";
-import StudentLogIn from "../Student_Facing/StudentLogIn";
+import StudentLogIn from "../Student_Facing/StudentInterestForm";
 import DirectorLogIn from "../Director_Facing/DirectorLogIn";
+import StudentInterestForm from "../Student_Facing/StudentInterestForm";
 
 interface IRoute {
   path: string;
@@ -47,6 +48,12 @@ const routes: IRoute[] = [
     path: "/DirectorLogIn",
     component: DirectorLogIn,
     name: "Director Login Page",
+    protected: true,
+  },
+  {
+    path: "/studentInterestForm",
+    component: StudentInterestForm,
+    name: "Student Interest Form",
     protected: true,
   },
 ];

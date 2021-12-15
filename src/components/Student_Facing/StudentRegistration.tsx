@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-export default function StudentInterestForm(): JSX.Element {
+export default function StudentRegistration(): JSX.Element {
   const [registering, setRegistering] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -46,7 +46,7 @@ export default function StudentInterestForm(): JSX.Element {
       .then((successfulNewAccount) => {
         console.log(successfulNewAccount);
         // if successful console.loghen re-direct back to home page
-        navigate("/");
+        navigate("/studentInterestForm");
       })
       .catch((error) => {
         console.log(error);
