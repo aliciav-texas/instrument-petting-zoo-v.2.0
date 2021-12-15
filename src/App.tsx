@@ -5,7 +5,8 @@ import Header from "./components/Navigation/Header";
 import Homepage from "./components/Homepage";
 import InstrumentAssessmentMain from "./components/Assessor_Facing/InstrusmentAssessmentMain";
 import DirectorMain from "./components/Director_Facing/DirectorMain";
-import StudentMain from "./components/Student_Facing/StudentInterestForm";
+import StudentRegistration from "./components/Student_Facing/StudentRegistration";
+import DirectorLogIn from "./components/Director_Facing/DirectorLogIn";
 
 export function App(): JSX.Element {
   return (
@@ -13,13 +14,17 @@ export function App(): JSX.Element {
       <main>
         <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/studentInterest" element={<StudentMain />} />
+          <Route
+            path="/studentRegistration"
+            element={<StudentRegistration />}
+          />
           <Route
             path="/instrumentAssessment"
             element={<InstrumentAssessmentMain />}
           />
 
-          <Route path="/director" element={<DirectorMain />} />
+          <Route path="/directorMain" element={<DirectorMain />} />
+          <Route path="/directorLogin" element={<DirectorLogIn />} />
           {/* <Route path="/finalCheckout" element={FinalCheckout} /> */}
         </Routes>
       </main>
