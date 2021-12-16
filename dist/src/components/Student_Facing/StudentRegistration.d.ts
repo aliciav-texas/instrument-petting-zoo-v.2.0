@@ -1,2 +1,2 @@
 /// <reference types="react" />
-export default function StudentInterestForm(): JSX.Element;
+export default function StudentRegistration(): JSX.Element;

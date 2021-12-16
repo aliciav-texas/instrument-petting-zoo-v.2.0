@@ -1,2 +1,5 @@
-/// <reference types="react" />
-export declare function App(): JSX.Element;
+import React from "react";
+export interface IAppProps {
+}
+declare const App: React.FunctionComponent<IAppProps>;
+export default App;

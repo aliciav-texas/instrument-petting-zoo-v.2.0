@@ -1,13 +1,14 @@
 import React from "react";
+import { auth } from "../../../config/firebase";
+import { Navigate } from "react-router-dom";
 
-export interface IErrorTextProps {
-  error: string;
-}
+export interface IAuthRouteProps {}
 
-const ErrorText: React.FunctionComponent<IErrorTextProps> = (props) => {
-  const { error } = props;
-  if (!error) return null;
-  return <small className="text-danger">{error}</small>;
+const AuthRoute: React.FunctionComponent<IAuthRouteProps> = (props) => {
+  const { children } = props;
+
+  if (!auth.currentUser) return <Navigate to="/studentRegister" />;
+  return <div>{children}</div>;
 };
 
-export default ErrorText;
+export default AuthRoute;
