@@ -7,7 +7,10 @@ export interface IAuthRouteProps {}
 const AuthRoute: React.FunctionComponent<IAuthRouteProps> = (props) => {
   const { children } = props;
 
-  if (!auth.currentUser) return <Navigate to="/studentRegister" />;
+  if (!auth.currentUser) {
+    console.log("No user detected, redirecting");
+    return <Navigate to="/}studentRegister" />;
+  }
   return <div>{children}</div>;
 };
 
