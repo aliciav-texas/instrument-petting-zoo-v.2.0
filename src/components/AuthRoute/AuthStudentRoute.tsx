@@ -4,14 +4,14 @@ import { Navigate } from "react-router-dom";
 
 export interface IAuthRouteProps {}
 
-const AuthRoute: React.FunctionComponent<IAuthRouteProps> = (props) => {
+const AuthStudentRoute: React.FunctionComponent<IAuthRouteProps> = (props) => {
   const { children } = props;
 
   if (!auth.currentUser) {
     console.log("No user detected, redirecting");
-    return <Navigate to="/}studentRegister" />;
+    return <Navigate to="/studentRegister" />;
   }
   return <div>{children}</div>;
 };
 
-export default AuthRoute;
+export default AuthStudentRoute;
