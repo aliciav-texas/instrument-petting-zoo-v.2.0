@@ -9,20 +9,37 @@ interface IPageProps {
 }
 const DirectorLogOut: React.FunctionComponent<IPageProps> = () => {
   const navigate = useNavigate();
+
   const Logout = () => {
-    auth.signOut().then(() => {
-      navigate("/");
-    });
+    auth
+      .signOut()
+      .then(() => {
+        navigate("/");
+      })
+      .catch((errorLoggingOut) => {
+        console.log(errorLoggingOut);
+      });
   };
 
   return (
     <AuthDirectorContainer>
       <p>Are you sure you want to log out? </p>
       <div>
-        <Button className="mr-2" onClick={() => {}}>
+        <Button
+          className="mr-2"
+          onClick={() => {
+            navigate("/DirectorMain");
+          }}
+        >
           Cancel
         </Button>
-        <Button color="primary" className="mr-2" onClick={() => {}}>
+        <Button
+          color="primary"
+          className="mr-2"
+          onClick={() => {
+            Logout();
+          }}
+        >
           Logout
         </Button>
       </div>

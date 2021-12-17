@@ -7,7 +7,7 @@ import DirectorLogIn from "../Director_Facing/DirectorLogIn";
 import StudentInterestForm from "../Student_Facing/StudentInterestForm";
 import DirectorCHangePassword from "../Director_Facing/DirectorChangePassword";
 import DirectorChangePassword from "../Director_Facing/DirectorChangePassword";
-
+import DirectorLogOut from "../Director_Facing/DirectorLogOut";
 interface IRoute {
   path: string;
   component: any;
@@ -62,6 +62,12 @@ const routes: IRoute[] = [
     path: "/directorChangePassword",
     component: DirectorChangePassword,
     name: "Director Change Password",
+    protected: true,
+  },
+  {
+    path: "/DirectorLogOut",
+    component: DirectorLogOut,
+    name: "Director Log Out Page",
     protected: true,
   },
 ];
