@@ -37,7 +37,7 @@
 
 ### Alicia Villanueva - aliciav.texas@gmail.com
 
- <img src="READMEimages/Alicia-Headshot.jpeg" alt="Logo" width="80" height="80">
+ <img src="READMEimages/Villanueva-Profile-Pic.jpg" alt="Logo" width="80" height="80">
 
 [![linkedin-shield]][alicia-linkedin]
 [![github-shield]][alicia-github]
